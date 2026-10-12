@@ -23,3 +23,7 @@ This repository serves as a collection of creative, interesting, unhinged, or ev
 
 ## Fuzzbutts
 Existing fizzbuzz implementations:
+
+### Vanilla
+The most plain and boring fizzbuzz implementation possible.
+Or is it?
