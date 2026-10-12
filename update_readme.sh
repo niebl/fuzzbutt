@@ -23,4 +23,4 @@ do
         continue
     fi
 done
-echo "$readme$desc_list"
+echo "$readme$desc_list" > README.md
