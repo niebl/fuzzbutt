@@ -1,0 +1,31 @@
+name: update-readme
+run-name: updates the readme with the new entry after pull request is merged
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    name: "update readme"
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: "./update_readme >> README.md"
+  commit:
+    - name: Commit and Push Changes
+    - run: |
+        # configure user
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+        # stage any file changes to be committed
+        git add .
+
+        # make commit with staged changes
+        git commit -m 'updated readme for ${{ github.sha }}'
+
+        # push the commit back up to source GitHub repository
+        git push
