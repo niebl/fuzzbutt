@@ -11,10 +11,10 @@ jobs:
     name: "update readme"
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    with:
-      ssh-key: ${{secrets.ACTION_PRIVKEY}}
     steps:
     - uses: actions/checkout@v4
+      with:
+        ssh-key: ${{secrets.ACTION_PRIVKEY}}
     - run: "./update_readme.sh"
     - run: |
         # configure user
