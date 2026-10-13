@@ -29,3 +29,5 @@ Existing fizzbuzz implementations:
 ### Vanilla
 The most plain and boring fizzbuzz implementation possible.
 Or is it?
+
+submitted by: [niebl](https://github.com/niebl)
